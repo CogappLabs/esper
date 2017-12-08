@@ -36,6 +36,10 @@ enhance, pull back, pan right, pan left, pan up, pan down, stop</marquee>
 
         <div id="openseadragon">
             <canvas id='myCanvas' style="position: absolute; top: 0;left: 0;width:100%;height:100%;z-index:9999;"></canvas>
+            <!-- need to be here to work in fullscreen -->
+            <audio id="beep" src="sounds/beep.mp3"></audio>
+            <audio loop id="chuck" src="sounds/chuck.mp3"></audio>
+            <audio id="bop" src="sounds/bop.mp3"></audio>
         </div>
         <script type="text/javascript">
             var viewer = OpenSeadragon({
@@ -57,9 +61,6 @@ enhance, pull back, pan right, pan left, pan up, pan down, stop</marquee>
         <input type="button" value="Stop" id="stop"/>
         <input type="button" value="Gimme a hard copy right there" id="hard-copy"/>
     </div>
-    <audio loop id="beep" src="sounds/beep.mp3"></audio>
-    <audio loop id="chuck" src="sounds/chuck.mp3"></audio>
-    <audio loop id="bop" src="sounds/bop.mp3"></audio>
 
 </body>
 <script src="js/canvas-drawing.js"></script>

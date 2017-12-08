@@ -28,6 +28,8 @@ function startFullScreen(event) {
     if (event.fullScreen == true) {
         recognition.start();
         drawGrid();
+        playBeep();
+        playBop();
     } else {
         recognition.stop();
     }
@@ -39,12 +41,12 @@ function enhance() {
     //viewer.viewport.getBounds()    
     //var point = new OpenSeadragon.Point(-0.5,-0.5)
     esperStop();
+    playChuck();
     
     intVal = setInterval(function() {
       //  console.log("zooming " + viewer.viewport.getZoom())
         viewer.viewport.zoomTo(viewer.viewport.getZoom()*1.1,null,true);
         blueFlash();
-        viewer.forceRedraw();
         drawGrid();
     }, effectSpeed)
     
@@ -55,10 +57,13 @@ function pullOut() {
     //console.log(viewer.viewport.getBounds())
     
     esperStop();
+    playChuck();
     
     intVal = setInterval(function() {
        // console.log("dezooming " + viewer.viewport.getZoom())
         viewer.viewport.zoomTo(viewer.viewport.getZoom()/1.1,null,true);
+        blueFlash();
+        drawGrid();
     }, effectSpeed)
 
 }
@@ -82,11 +87,15 @@ function panDown() {
 function esperStop() {
     clearInterval(intVal);
     intVal = null;
+    stopAudio();
+    drawGrid();
+
 }
 
 function pan(x,y) {
     
     esperStop();
+    playChuck();
     
     intVal = setInterval(function() {
       //  console.log("panning " + x + y)
@@ -95,10 +104,13 @@ function pan(x,y) {
         var point = new OpenSeadragon.Point(x,y);
         var newBounds = bounds.translate(point);
         viewer.viewport.fitBoundsWithConstraints(newBounds, true);    
+        blueFlash();
+        drawGrid();
     }, effectSpeed)
     
 }
 
 function hardCopy() {
+    clearOverlay();
     window.print();
 }

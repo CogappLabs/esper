@@ -241,6 +241,11 @@ function blueFlash () {
     
 }
 
+function clearOverlay () {
+	ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
+}
+
+
 window.playBeep = function() {
     
     document.getElementById('beep').play();
