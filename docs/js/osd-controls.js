@@ -27,6 +27,7 @@ function startFullScreen(event) {
     console.log("gone fullscreen " + event.fullScreen);
     if (event.fullScreen == true) {
         recognition.start();
+        drawGrid();
     } else {
         recognition.stop();
     }
@@ -42,6 +43,9 @@ function enhance() {
     intVal = setInterval(function() {
         console.log("zooming " + viewer.viewport.getZoom())
         viewer.viewport.zoomTo(viewer.viewport.getZoom()*1.1,null,true);
+        blueFlash();
+        viewer.forceRedraw();
+        drawGrid();
     }, effectSpeed)
     
 }
@@ -90,7 +94,7 @@ function pan(x,y) {
         var bounds = viewer.viewport.getBounds();
         var point = new OpenSeadragon.Point(x,y);
         var newBounds = bounds.translate(point);
-        viewer.viewport.fitBounds(newBounds, true);    
+        viewer.viewport.fitBoundsWithConstraints(newBounds, true);    
     }, effectSpeed)
     
 }
