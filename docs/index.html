@@ -9,7 +9,7 @@
     <style>
     
         body {
-            background-color: #edf5e4;
+            background-color: black;
 
         }
         #content {
@@ -29,11 +29,11 @@
 <body>
 
 	<div id="div_start">
-		<p>Click the microphone to begin listening and use the following voice commands:</p>
-		<p>enhance, pull back, pan right, pan left, pan up, pan down, stop</p>
-          <button id="start_button" onclick="startButton(event)" style="display: inline-block;"><img alt="Start" id="start_img" src="mic.gif"></button>
+		<marquee style="width:90%;font-family:'Courier New', Courier, monospace, console;line-height:36px;font-size:24px;color:#67ce27;background-color:black;"> Click the microphone to begin listening and use the following voice commands: 
+enhance, pull back, pan right, pan left, pan up, pan down, stop</marquee>
+          <button id="start_button" onclick="startButton(event)" style="width:8%;display: inline-block;"><img alt="Start" id="start_img" src="mic.gif"></button>
         </div>
-    <div id="content">
+    <div id="content" style="padding-top:20px;">
 
         <div id="openseadragon"></div>
         <script type="text/javascript">
