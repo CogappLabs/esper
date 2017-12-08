@@ -51,6 +51,9 @@ function enhance() {
         blueFlash();
         drawGrid();
     }
+    else {
+        esperStop();
+    }
     }, effectSpeed)
     
 }
@@ -68,6 +71,9 @@ function pullOut() {
         viewer.viewport.zoomTo(viewer.viewport.getZoom()/1.1,null,true);
         blueFlash();
         drawGrid();
+       }
+       else {
+        esperStop();
        }
       
     }, effectSpeed)
