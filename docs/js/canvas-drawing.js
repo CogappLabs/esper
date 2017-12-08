@@ -233,8 +233,12 @@ window.drawSquare = function(x, y, width, height, color) {
 function blueFlash () {
 	ctx.clearRect(0, 0, myCanvas.width, myCanvas.height)
 
-	ctx.fillStyle = 'rgba(62,202,232,0.9)';
+	ctx.fillStyle = 'rgba(62,202,232,0.7)';
 	ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
+
+    setTimeout("ctx.clearRect(0, 0, myCanvas.width, myCanvas.height)", 200);
+    
+    
 }
 
 window.playBeep = function() {

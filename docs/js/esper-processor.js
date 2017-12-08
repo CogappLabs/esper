@@ -28,7 +28,10 @@ if (!('webkitSpeechRecognition' in window)) {
         	var command = event.results[i][0].transcript.trim();
 			if ( command.indexOf('enhance') >= 0 
 			  || command.indexOf('in harness') >= 0
-			  || command.indexOf('in harmony') >= 0) {
+			  || command.indexOf('in harmony') >= 0
+			  || command.indexOf('move in') >= 0
+			  || command.indexOf('center in') >= 0
+			  || command.indexOf('centre in') >= 0) {
 				enhance();
 			} 
 			if ( command.indexOf('pan right') >= 0
