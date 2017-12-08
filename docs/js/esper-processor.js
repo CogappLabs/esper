@@ -20,67 +20,88 @@ if (!('webkitSpeechRecognition' in window)) {
   };
   
   recognition.onresult = function(event) {
-
+  console.log('result');
+	var command;
+	var commandTrigger;
     for (var i = event.resultIndex; i < event.results.length; ++i) {
       //if (event.results[i].isFinal) {
         console.log( event.results[i][0].transcript);
         //switch(event.results[i][0].transcript.trim()) {
-        	var command = event.results[i][0].transcript.trim();
-			if ( command.indexOf('enhance') >= 0 
+        	command = event.results[i][0].transcript.trim().toLowerCase();
+        	commandTrigger = false;
+        	if ( command.indexOf('stop') >= 0
+			  || command.indexOf('hold') >= 0
+			  || command.indexOf('wait') >= 0) {
+				esperStop();
+				commandTrigger = true;
+			}
+			else if ( command.indexOf('enhance') >= 0 
 			  || command.indexOf('in harness') >= 0
 			  || command.indexOf('in harmony') >= 0
 			  || command.indexOf('move in') >= 0
 			  || command.indexOf('center in') >= 0
-			  || command.indexOf('centre in') >= 0) {
+			  || command.indexOf('centre in') >= 0
+			  || command.indexOf('zoom in') >= 0) {
 				enhance();
-			} 
-			if ( command.indexOf('pan right') >= 0
+				commandTrigger = true;
+			}
+			else if ( command.indexOf('pull out') >= 0
+			  || command.indexOf('pull back') >= 0
+			  || command.indexOf('zoom out') >= 0
+			  || command.indexOf('Holbeck') >= 0
+			  || command.indexOf('back') >= 0
+			  || command.indexOf('out') >= 0) {	
+				pullOut();
+				commandTrigger = true;
+			}
+			else if ( command.indexOf('pan right') >= 0
 			  || command.indexOf('and right') >= 0
 			  || command.indexOf('pam right') >= 0
 			  || command.indexOf('hang right') >= 0
 			  || command.indexOf('right') >= 0) {
 				panRight();
+				commandTrigger = true;
 			} 
-			if ( command.indexOf('pan left') >= 0
+			else if ( command.indexOf('pan left') >= 0
 			  || command.indexOf('and left') >= 0
 			  || command.indexOf('pam left') >= 0
 			  || command.indexOf('hang left') >= 0
 			  || command.indexOf('left') >= 0) {
 				panLeft();
+				commandTrigger = true;
 			} 
-			if ( command.indexOf('pan up') >= 0
+			else if ( command.indexOf('pan up') >= 0
 			  || command.indexOf('and up') >= 0
 			  || command.indexOf('pam up') >= 0
 			  || command.indexOf('hang up') >= 0
-			  || command.indexOf('up') >= 0) {
+			  || command.indexOf('up') >= 0
+			  || command.indexOf('hannah') >= 0) {
 				panUp();
+				commandTrigger = true;
 			} 
-			if ( command.indexOf('pan down') >= 0
+			else if ( command.indexOf('pan down') >= 0
 			  || command.indexOf('and down') >= 0
 			  || command.indexOf('pam down') >= 0
 			  || command.indexOf('hang down') >= 0
 			  || command.indexOf('down') >= 0) {
 				panDown();
-			} 
-			if ( command.indexOf('pull out') >= 0
-			  || command.indexOf('pull back') >= 0
-			  || command.indexOf('Holbeck') >= 0
-			  || command.indexOf('back') >= 0
-			  || command.indexOf('out') >= 0) {	
-				pullOut();
-			} 				
-			if ( command.indexOf('stop') >= 0
-			  || command.indexOf('hold') >= 0
-			  || command.indexOf('wait') >= 0) {
-				esperStop();
-			}
-			if ( command.indexOf('hard copy') >= 0
+				commandTrigger = true;
+			}  				
+			else if ( command.indexOf('hard copy') >= 0
 			  || command.indexOf('print') >= 0
 			  || command.indexOf('printout') >= 0) {
 				hardCopy();
+				commandTrigger = true;
 			}
-			if ( command.indexOf('f***') >= 0) {
+			else if ( command.indexOf('f***') >= 0) {
 				alert('F*** you too');
+				commandTrigger = true;
+			}
+			
+			if (commandTrigger) {
+				break;  
+				//recognition.stop();
+				//recognition.start();
 			}
 	//	}
      // }
@@ -123,6 +144,7 @@ if (!('webkitSpeechRecognition' in window)) {
   }
 }
 
+
 function startButton(event) {
   if (recognizing == false) {
 	recognition.start();
@@ -135,5 +157,5 @@ function startButton(event) {
 
 function upgrade() {
   start_button.style.visibility = 'hidden';
-  showInfo('info_upgrade');
+  alert('you must be using chrome 44 or higher');
 }
