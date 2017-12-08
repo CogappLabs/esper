@@ -9,7 +9,7 @@ if (!('webkitSpeechRecognition' in window)) {
 } else {
   recognition = new webkitSpeechRecognition();
   recognition.continuous = true;
-  recognition.interimResults = false;
+  recognition.interimResults = true;
 
 
   recognition.onstart = function() {
@@ -20,47 +20,55 @@ if (!('webkitSpeechRecognition' in window)) {
   recognition.onresult = function(event) {
 
     for (var i = event.resultIndex; i < event.results.length; ++i) {
-      if (event.results[i].isFinal) {
+      //if (event.results[i].isFinal) {
         console.log( event.results[i][0].transcript);
         switch(event.results[i][0].transcript.trim()) {
 			case 'enhance':
 			case 'in harness':
+			case 'in harmony':
 				enhance();
 				break;
 			case 'pan right':
 			case 'and right':
 			case 'pam right':
 			case 'hang right':
+			case 'right':
 				panRight();
 				break;
 			case 'pan left':
 			case 'and left':
 			case 'pam left':
-			case 'hang left':			
+			case 'hang left':
+			case 'left':			
 				panLeft();
 				break;
 			case 'pan up':
 			case 'and up':
 			case 'pam up':	
-			case 'hang up':		
+			case 'hang up':	
+			case 'up':		
 				panUp();
 				break;
 			case 'pan down':
 			case 'and down':
 			case 'pam down':
-			case 'hang down':			
+			case 'hang down':
+			case 'down':			
 				panDown();
 				break;
 			case 'pull out':
 			case 'pull back':
-			case 'Holbeck':					
+			case 'Holbeck':
+			case 'out':				
 				pullOut();
 				break;				
 			case 'stop':
+			case 'hold':
+			case 'wait':
 				esperStop();
 				break;
 		}
-      }
+     // }
     }
   };
   
@@ -96,9 +104,10 @@ if (!('webkitSpeechRecognition' in window)) {
 
 function startButton(event) {
   if (recognizing == false) {
-	  recognition.start();
+	recognition.start();
   	start_timestamp = event.timeStamp;
   } else {
+  	esperStop();
   	recognition.stop();
   }
 }
