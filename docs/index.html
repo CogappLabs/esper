@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>Esper</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="openseadragon-bin-2.2.1/openseadragon.min.js"></script>
+    <script src="js/osd-controls.js"></script>
     <style>
     
         body {
@@ -26,15 +29,17 @@
     <div id="content">
 
         <div id="openseadragon"></div>
-        <script src="openseadragon-bin-2.2.1/openseadragon.min.js"></script>
         <script type="text/javascript">
             var viewer = OpenSeadragon({
                 id: "openseadragon",
                 prefixUrl: "openseadragon-bin-2.2.1/images/",
-                tileSources: "https://images.cogapp.com/iiif/iiif_postits.tiff/info.json"
+                tileSources: "https://images.britishart.yale.edu/iiif/4f227f08-7842-46cc-b05a-e3c6a4614cc1/info.json"
             });
         </script>
 
+    </div>
+    <div id="debug">
+        <input type="button" value="Enhance" id="enhance"/>
     </div>
 </body>
 </html>
