@@ -16,6 +16,12 @@ $(function ()
 window.intVal = null;
 window.effectSpeed = 400;
 
+viewer.addHandler('full-screen', startFullScreen); 
+
+function startFullScreen(event) {
+    console.log("gone fullscreen" + event);
+}
+
 function enhance() {
     //console.log(viewer.viewport.getBounds())
     
