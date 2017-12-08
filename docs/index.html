@@ -5,6 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="openseadragon-bin-2.2.1/openseadragon.min.js"></script>
     <script src="js/osd-controls.js"></script>
+    <script type="text/javascript" src="esper-processor.js"></script>
     <style>
     
         body {
@@ -24,7 +25,6 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
     </style>
-    <script type="text/javascript" src="esper-processor.js"></script>
 </head>
 <body>
 
@@ -47,10 +47,12 @@
     </div>
     <div id="debug">
         <input type="button" value="Enhance" id="enhance"/>
+        <input type="button" value="Pull Out" id="pull-out"/>
         <input type="button" value="Right" id="pan-right"/>
         <input type="button" value="Left" id="pan-left"/>
         <input type="button" value="Up" id="pan-up"/>
         <input type="button" value="Down" id="pan-down"/>
+        <input type="button" value="Stop" id="stop"/>
     </div>
 </body>
 </html>
