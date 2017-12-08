@@ -40,7 +40,7 @@ function enhance() {
     esperStop();
     
     intVal = setInterval(function() {
-        console.log("zooming " + viewer.viewport.getZoom())
+      //  console.log("zooming " + viewer.viewport.getZoom())
         viewer.viewport.zoomTo(viewer.viewport.getZoom()*1.1,null,true);
     }, effectSpeed)
     
@@ -53,7 +53,7 @@ function pullOut() {
     esperStop();
     
     intVal = setInterval(function() {
-        console.log("dezooming " + viewer.viewport.getZoom())
+       // console.log("dezooming " + viewer.viewport.getZoom())
         viewer.viewport.zoomTo(viewer.viewport.getZoom()/1.1,null,true);
     }, effectSpeed)
 
@@ -85,8 +85,8 @@ function pan(x,y) {
     esperStop();
     
     intVal = setInterval(function() {
-        console.log("panning " + x + y)
-        console.log(viewer.viewport.getBounds());
+      //  console.log("panning " + x + y)
+      //  console.log(viewer.viewport.getBounds());
         var bounds = viewer.viewport.getBounds();
         var point = new OpenSeadragon.Point(x,y);
         var newBounds = bounds.translate(point);
