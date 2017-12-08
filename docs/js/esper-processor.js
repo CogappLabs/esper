@@ -22,24 +22,42 @@ if (!('webkitSpeechRecognition' in window)) {
     for (var i = event.resultIndex; i < event.results.length; ++i) {
       if (event.results[i].isFinal) {
         console.log( event.results[i][0].transcript);
-        switch(event.results[i][0].transcript) {
+        switch(event.results[i][0].transcript.trim()) {
 			case 'enhance':
-				document.getElementById('enhance').click();
+			case 'in harness':
+				enhance();
 				break;
 			case 'pan right':
-				document.getElementById('pan-right').click();
+			case 'and right':
+			case 'pam right':
+			case 'hang right':
+				panRight();
 				break;
 			case 'pan left':
-				document.getElementById('pan-left').click();
+			case 'and left':
+			case 'pam left':
+			case 'hang left':			
+				panLeft();
 				break;
 			case 'pan up':
-				document.getElementById('pan-up').click();
+			case 'and up':
+			case 'pam up':	
+			case 'hang up':		
+				panUp();
 				break;
 			case 'pan down':
-				document.getElementById('pan-down').click();
+			case 'and down':
+			case 'pam down':
+			case 'hang down':			
+				panDown();
 				break;
+			case 'pull out':
+			case 'pull back':
+			case 'Holbeck':					
+				pullOut();
+				break;				
 			case 'stop':
-				document.getElementById('stop').click();
+				esperStop();
 				break;
 		}
       }
