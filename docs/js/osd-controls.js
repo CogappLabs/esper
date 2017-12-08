@@ -1,4 +1,11 @@
 /*jslint devel: true */
+document.onkeypress = function (e) {
+    e = e || window.event;
+    if (e.keyCode==102) { //102 = 'f' key
+    	goFullScreen();
+    }
+};
+
 
 $(function () 
   {
