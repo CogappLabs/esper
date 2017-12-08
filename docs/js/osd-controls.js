@@ -4,21 +4,26 @@ $(function ()
   {
     "use strict";
     $('#enhance').click(enhance);
+    $('#pan-right').click(panRight);
   });
 
 function enhance() {
     "use strict";
     console.log(viewer.viewport.getZoom())
+    console.log(viewer.viewport.getBounds())
     
-    //$("#result").load("content.html"); //loads contents of file straight into div!
-/*    
-    $.get("content.html",null, function (data, textStatus, xhr) { 
-        // second param (null) is the data you want GET as a query string. Specified as { key: value } probably
-        $("#result").html(data);
-    });
-*/
+    //viewer.viewport.getBounds()    
+    //var point = new OpenSeadragon.Point(-0.5,-0.5)
+    viewer.viewport.zoomTo(viewer.viewport.getZoom()*2,null,true);
+
+}
+
+function panRight() {
+    "use strict";
+    console.log(viewer.viewport.getBounds())
     
-viewer.viewport.zoomTo(viewer.viewport.getZoom()*2);
+    var point = new OpenSeadragon.Point(0.1,0)
+    viewer.viewport.panTo(point)    
 
 }
 
