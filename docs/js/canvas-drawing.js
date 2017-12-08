@@ -250,6 +250,16 @@ window.playChuck = function () {
     document.getElementById('chuck').play();
 }
 
+window.playBop = function () {
+    document.getElementById('bop').play();
+}
+
+window.stopAudio = function () {
+    document.getElementById('bop').pause();
+    document.getElementById('beep').pause();
+    document.getElementById('chuck').pause();
+
+}
 
 // 1. drawGrid
 // 2. numbers
