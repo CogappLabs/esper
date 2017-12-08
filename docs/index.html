@@ -2,11 +2,8 @@
 <html lang="en-US">
 <head>
 	<title>Esper</title>
-	<script type="text/javascript" src="js/esper-processor.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="openseadragon-bin-2.2.1/openseadragon.min.js"></script>
-    <script src="js/osd-controls.js"></script>
-    <script type="text/javascript" src="esper-processor.js"></script>
     <style>
     
         body {
@@ -50,6 +47,7 @@ enhance, pull back, pan right, pan left, pan up, pan down, stop</marquee>
 
     </div>
     <div id="debug">
+        <input type="button" value="Start fullscreen" id="fullscreen"/>
         <input type="button" value="Enhance" id="enhance"/>
         <input type="button" value="Pull Out" id="pull-out"/>
         <input type="button" value="Right" id="pan-right"/>
@@ -64,4 +62,6 @@ enhance, pull back, pan right, pan left, pan up, pan down, stop</marquee>
 
 </body>
 <script src="js/canvas-drawing.js"></script>
+<script type="text/javascript" src="js/esper-processor.js"></script>
+<script src="js/osd-controls.js"></script>
 </html>

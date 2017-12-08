@@ -3,6 +3,7 @@
 $(function () 
   {
     "use strict";
+    $('#fullscreen').click(goFullScreen);
     $('#enhance').click(enhance);
     $('#pull-out').click(pullOut);
     $('#pan-right').click(panRight);
@@ -18,8 +19,17 @@ window.effectSpeed = 400;
 
 viewer.addHandler('full-screen', startFullScreen); 
 
+function goFullScreen() {
+    viewer.setFullScreen(true);
+}
+
 function startFullScreen(event) {
-    console.log("gone fullscreen" + event);
+    console.log("gone fullscreen " + event.fullScreen);
+    if (event.fullScreen == true) {
+        recognition.start();
+    } else {
+        recognition.stop();
+    }
 }
 
 function enhance() {
