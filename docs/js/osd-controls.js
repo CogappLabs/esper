@@ -44,10 +44,16 @@ function enhance() {
     playChuck();
     
     intVal = setInterval(function() {
+    if(viewer.viewport.getZoom() < 6.43) {
+
       //  console.log("zooming " + viewer.viewport.getZoom())
         viewer.viewport.zoomTo(viewer.viewport.getZoom()*1.1,null,true);
         blueFlash();
         drawGrid();
+    }
+    else {
+        esperStop();
+    }
     }, effectSpeed)
     
 }
@@ -61,9 +67,15 @@ function pullOut() {
     
     intVal = setInterval(function() {
        // console.log("dezooming " + viewer.viewport.getZoom())
+       if(viewer.viewport.getZoom() > 0.79) {
         viewer.viewport.zoomTo(viewer.viewport.getZoom()/1.1,null,true);
         blueFlash();
         drawGrid();
+       }
+       else {
+        esperStop();
+       }
+      
     }, effectSpeed)
 
 }
