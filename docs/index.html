@@ -10,7 +10,7 @@
     <style>
     
         body {
-            background-color: #edf5e4;
+            background-color: black;
 
         }
         #content {
@@ -31,11 +31,11 @@
 <body>
 
 	<div id="div_start">
-		<p>Click the microphone to begin listening and use the following voice commands:</p>
-		<p>enhance, pull back, pan right, pan left, pan up, pan down, stop</p>
-          <button id="start_button" onclick="startButton(event)" style="display: inline-block;"><img alt="Start" id="start_img" src="mic.gif"></button>
+		<marquee style="width:90%;font-family:'Courier New', Courier, monospace, console;line-height:36px;font-size:24px;color:#67ce27;background-color:black;"> Click the microphone to begin listening and use the following voice commands: 
+enhance, pull back, pan right, pan left, pan up, pan down, stop</marquee>
+          <button id="start_button" onclick="startButton(event)" style="width:8%;display: inline-block;"><img alt="Start" id="start_img" src="mic.gif"></button>
         </div>
-    <div id="content">
+    <div id="content" style="padding-top:20px;">
 
         <div id="openseadragon">
             <canvas id='myCanvas' style="position: absolute; top: 0;left: 0;width:100%;height:100%;z-index:9999;"></canvas>
@@ -57,6 +57,7 @@
         <input type="button" value="Up" id="pan-up"/>
         <input type="button" value="Down" id="pan-down"/>
         <input type="button" value="Stop" id="stop"/>
+        <input type="button" value="Gimme a hard copy right there" id="hard-copy"/>
     </div>
     <audio id="beep" src="http://www.soundjay.com/button/beep-07.wav"></audio>
     <audio id="chuck" src="http://www.soundjay.com/button/beep-07.wav"></audio>

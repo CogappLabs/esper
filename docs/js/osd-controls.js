@@ -10,6 +10,7 @@ $(function ()
     $('#pan-up').click(panUp);
     $('#pan-down').click(panDown);
     $('#stop').click(esperStop);
+    $('#hard-copy').click(hardCopy);
   });
 
 window.intVal = null;
@@ -78,3 +79,6 @@ function pan(x,y) {
     
 }
 
+function hardCopy() {
+    window.print();
+}
