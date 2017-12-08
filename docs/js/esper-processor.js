@@ -22,52 +22,53 @@ if (!('webkitSpeechRecognition' in window)) {
     for (var i = event.resultIndex; i < event.results.length; ++i) {
       //if (event.results[i].isFinal) {
         console.log( event.results[i][0].transcript);
-        switch(event.results[i][0].transcript.trim()) {
-			case 'enhance':
-			case 'in harness':
-			case 'in harmony':
+        //switch(event.results[i][0].transcript.trim()) {
+        	var command = event.results[i][0].transcript.trim();
+			if ( command.indexOf('enhance') >= 0 
+			  || command.indexOf('in harness') >= 0
+			  || command.indexOf('in harmony') >= 0) {
 				enhance();
-				break;
-			case 'pan right':
-			case 'and right':
-			case 'pam right':
-			case 'hang right':
-			case 'right':
+			} 
+			if ( command.indexOf('pan right') >= 0
+			  || command.indexOf('and right') >= 0
+			  || command.indexOf('pam right') >= 0
+			  || command.indexOf('hang right') >= 0
+			  || command.indexOf('right') >= 0) {
 				panRight();
-				break;
-			case 'pan left':
-			case 'and left':
-			case 'pam left':
-			case 'hang left':
-			case 'left':			
+			} 
+			if ( command.indexOf('pan left') >= 0
+			  || command.indexOf('and left') >= 0
+			  || command.indexOf('pam left') >= 0
+			  || command.indexOf('hang left') >= 0
+			  || command.indexOf('left') >= 0) {
 				panLeft();
-				break;
-			case 'pan up':
-			case 'and up':
-			case 'pam up':	
-			case 'hang up':	
-			case 'up':		
+			} 
+			if ( command.indexOf('pan up') >= 0
+			  || command.indexOf('and up') >= 0
+			  || command.indexOf('pam up') >= 0
+			  || command.indexOf('hang up') >= 0
+			  || command.indexOf('up') >= 0) {
 				panUp();
-				break;
-			case 'pan down':
-			case 'and down':
-			case 'pam down':
-			case 'hang down':
-			case 'down':			
+			} 
+			if ( command.indexOf('pan down') >= 0
+			  || command.indexOf('and down') >= 0
+			  || command.indexOf('pam down') >= 0
+			  || command.indexOf('hang down') >= 0
+			  || command.indexOf('down') >= 0) {
 				panDown();
-				break;
-			case 'pull out':
-			case 'pull back':
-			case 'Holbeck':
-			case 'out':				
+			} 
+			if ( command.indexOf('pull out') >= 0
+			  || command.indexOf('pull back') >= 0
+			  || command.indexOf('Holbeck') >= 0
+			  || command.indexOf('out') >= 0) {	
 				pullOut();
-				break;				
-			case 'stop':
-			case 'hold':
-			case 'wait':
+			} 				
+			if ( command.indexOf('stop') >= 0
+			  || command.indexOf('hold') >= 0
+			  || command.indexOf('wait') >= 0) {
 				esperStop();
-				break;
-		}
+			} 
+	//	}
      // }
     }
   };
