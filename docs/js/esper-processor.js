@@ -24,8 +24,7 @@ if (!('webkitSpeechRecognition' in window)) {
         console.log( event.results[i][0].transcript);
         switch(event.results[i][0].transcript.trim()) {
 			case 'enhance':
-			case 'in harness'
-				console.log('trigger');
+			case 'in harness':
 				enhance();
 				break;
 			case 'pan right':
@@ -60,8 +59,6 @@ if (!('webkitSpeechRecognition' in window)) {
 			case 'stop':
 				esperStop();
 				break;
-			default:
-				console.log('switch');
 		}
       }
     }
