@@ -8,25 +8,40 @@ if (!('webkitSpeechRecognition' in window)) {
   upgrade();
 } else {
   recognition = new webkitSpeechRecognition();
-  recognition.continuous = false;  //interperate pauses as end of command
+  recognition.continuous = true;
   recognition.interimResults = false;
 
 
   recognition.onstart = function() {
-    alert('start');
     recognizing = true;
     start_img.src = 'mic-animate.gif';
   };
   
   recognition.onresult = function(event) {
-    alert('result');
 
     for (var i = event.resultIndex; i < event.results.length; ++i) {
       if (event.results[i].isFinal) {
         console.log( event.results[i][0].transcript);
-        if (event.results[i][0].transcript) {
-        	enhance.click();
-        }
+        switch(event.results[i][0].transcript) {
+			case 'enhance':
+				document.getElementById('enhance').click();
+				break;
+			case 'pan right':
+				document.getElementById('pan-right').click();
+				break;
+			case 'pan left':
+				document.getElementById('pan-left').click();
+				break;
+			case 'pan up':
+				document.getElementById('pan-up').click();
+				break;
+			case 'pan down':
+				document.getElementById('pan-down').click();
+				break;
+			case 'stop':
+				document.getElementById('stop').click();
+				break;
+		}
       }
     }
   };
@@ -56,13 +71,18 @@ if (!('webkitSpeechRecognition' in window)) {
   };
   
   recognition.onend = function() {
-    alert('end');
+    recognizing = false;
+    start_img.src = 'mic.gif';
   }
 }
 
 function startButton(event) {
-  recognition.start();
-  start_timestamp = event.timeStamp;
+  if (recognizing == false) {
+	  recognition.start();
+  	start_timestamp = event.timeStamp;
+  } else {
+  	recognition.stop();
+  }
 }
 
 function upgrade() {
