@@ -31,7 +31,9 @@ if (!('webkitSpeechRecognition' in window)) {
         	commandTrigger = false;
         	if ( command.indexOf('stop') >= 0
 			  || command.indexOf('hold') >= 0
-			  || command.indexOf('wait') >= 0) {
+			  || command.indexOf('wait') >= 0
+			  || command.indexOf('weight') >= 0
+			  || command.indexOf('star') >= 0) {
 				esperStop();
 				commandTrigger = true;
 			}
@@ -41,7 +43,8 @@ if (!('webkitSpeechRecognition' in window)) {
 			  || command.indexOf('move in') >= 0
 			  || command.indexOf('center in') >= 0
 			  || command.indexOf('centre in') >= 0
-			  || command.indexOf('zoom in') >= 0) {
+			  || command.indexOf('zoom in') >= 0
+			  || command.indexOf('do men') >= 0) {
 				enhance();
 				commandTrigger = true;
 			}
@@ -58,7 +61,9 @@ if (!('webkitSpeechRecognition' in window)) {
 			  || command.indexOf('and right') >= 0
 			  || command.indexOf('pam right') >= 0
 			  || command.indexOf('hang right') >= 0
-			  || command.indexOf('right') >= 0) {
+			  || command.indexOf('right') >= 0
+			  || command.indexOf('handwrite') >= 0
+			  | command.indexOf('write') >= 0) {
 				panRight();
 				commandTrigger = true;
 			} 
@@ -75,7 +80,8 @@ if (!('webkitSpeechRecognition' in window)) {
 			  || command.indexOf('pam up') >= 0
 			  || command.indexOf('hang up') >= 0
 			  || command.indexOf('up') >= 0
-			  || command.indexOf('hannah') >= 0) {
+			  || command.indexOf('hannah') >= 0
+			  || command.indexOf('anna') >= 0) {
 				panUp();
 				commandTrigger = true;
 			} 
@@ -83,7 +89,8 @@ if (!('webkitSpeechRecognition' in window)) {
 			  || command.indexOf('and down') >= 0
 			  || command.indexOf('pam down') >= 0
 			  || command.indexOf('hang down') >= 0
-			  || command.indexOf('down') >= 0) {
+			  || command.indexOf('down') >= 0
+			  || command.indexOf('panda') >= 0) {
 				panDown();
 				commandTrigger = true;
 			}  				
