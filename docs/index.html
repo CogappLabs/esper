@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
 	<title>Esper</title>
+	<script type="text/javascript" src="js/esper-processor.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="openseadragon-bin-2.2.1/openseadragon.min.js"></script>
     <script src="js/osd-controls.js"></script>
+    <script type="text/javascript" src="esper-processor.js"></script>
     <style>
     
         body {
@@ -26,6 +28,12 @@
     </style>
 </head>
 <body>
+
+	<div id="div_start">
+		<p>Click the microphone to begin listening and use the following voice commands:</p>
+		<p>enhance, pull back, pan right, pan left, pan up, pan down, stop</p>
+          <button id="start_button" onclick="startButton(event)" style="display: inline-block;"><img alt="Start" id="start_img" src="mic.gif"></button>
+        </div>
     <div id="content">
 
         <div id="openseadragon"></div>
@@ -40,6 +48,12 @@
     </div>
     <div id="debug">
         <input type="button" value="Enhance" id="enhance"/>
+        <input type="button" value="Pull Out" id="pull-out"/>
+        <input type="button" value="Right" id="pan-right"/>
+        <input type="button" value="Left" id="pan-left"/>
+        <input type="button" value="Up" id="pan-up"/>
+        <input type="button" value="Down" id="pan-down"/>
+        <input type="button" value="Stop" id="stop"/>
     </div>
 </body>
 </html>
