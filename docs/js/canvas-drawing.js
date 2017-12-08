@@ -246,6 +246,9 @@ window.playChuck = function () {
     document.getElementById('chuck').play();
 }
 
+window.playBop = function () {
+    document.getElementById('bop').play();
+}
 
 // 1. drawGrid
 // 2. numbers
