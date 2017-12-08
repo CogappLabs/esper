@@ -12,7 +12,8 @@ window.ctx=myCanvas.getContext("2d");
 
 
 window.drawGrid = function () {
-	
+	ctx.beginPath();
+
     var dx = 150;
     var dy = 150;
     
@@ -102,9 +103,9 @@ window.renderCrosshairs = function(x, y) {
 
 	drawCrosshair(centerX, centerY, 'rgba(85,168,252,0.5)');
 	// setTimeout("viewer.forceRedraw()", 250);
-	setTimeout("drawCrosshair(midX, midY, 'rgba(85,168,252,0.5)')", 500);
+	setTimeout("drawCrosshair(midX, midY, 'rgba(85,168,252,0.8)')", 500);
 	// setTimeout("viewer.forceRedraw()", 750);
-	setTimeout("drawCrosshair(finalX, finalY, 'rgba(85,168,252,0.5)')", 1000);
+	setTimeout("drawCrosshair(finalX, finalY, 'rgba(85,168,252,1)')", 1000);
 	setTimeout("ctx.clearRect(0, 0, myCanvas.width, myCanvas.height)", 1500);
 
 }
@@ -115,7 +116,7 @@ window.drawCrosshair = function(x, y, style) {
 	ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
  	ctx.beginPath();
 
-	ctx.lineWidth = 5;
+	ctx.lineWidth = 10;
 	ctx.strokeStyle = style;
 
 	ctx.moveTo(x, y - 1000);
@@ -222,24 +223,27 @@ window.showCrosshairs = function (x, y) {
 
 }
 
-function drawSquare(x, y, width, height, color) {
-
-}
-
-function renderCrosshairs (x, y){
-
+window.drawSquare = function(x, y, width, height, color) {
+	
+	// ctx.clearRect(0, 0, myCanvas.width, myCanvas.height)
+	// ctx.rect(x,y,width,height);
+	// ctx.stroke();
 }
 
 function blueFlash () {
+	ctx.clearRect(0, 0, myCanvas.width, myCanvas.height)
 
+	ctx.fillStyle = 'rgba(62,202,232,0.9)';
+	ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
 }
 
-function playBleep() {
-
+window.playBeep = function() {
+    
+    document.getElementById('beep').play();
 }
 
-function playChuck () {
-
+window.playChuck = function () {
+    document.getElementById('chuck').play();
 }
 
 
