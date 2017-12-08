@@ -14,7 +14,7 @@ if (!('webkitSpeechRecognition' in window)) {
 
   recognition.onstart = function() {
     recognizing = true;
-    if (document.getElementById('start_img') {
+    if (document.getElementById('start_img')) {
 	    start_img.src = 'mic-animate.gif';
 	}
   };
@@ -88,14 +88,14 @@ if (!('webkitSpeechRecognition' in window)) {
   recognition.onerror = function(event) {
     alert(event.error);
     if (event.error == 'no-speech') {
-      if (document.getElementById('start_img') {
+      if (document.getElementById('start_img')) {
      	 start_img.src = 'mic.gif';
       }
       alert('info_no_speech');
       ignore_onend = true;
     }
     if (event.error == 'audio-capture') {
-      if (document.getElementById('start_img') {
+      if (document.getElementById('start_img')) {
         start_img.src = 'mic.gif';
       }
       alert('info_no_microphone');
@@ -114,7 +114,7 @@ if (!('webkitSpeechRecognition' in window)) {
   
   recognition.onend = function() {
     recognizing = false;
-    if (document.getElementById('start_img') {
+    if (document.getElementById('start_img')) {
       start_img.src = 'mic.gif';
     }
   }
