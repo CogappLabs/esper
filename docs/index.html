@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Esper</title>
+    <style>
+    
+        body {
+            background-color: #edf5e4;
+
+        }
+        #content {
+            font-family:sans-serif;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        
+        #openseadragon {
+            width: 100%;
+            height: 600px;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+
+        <div id="openseadragon"></div>
+        <script src="openseadragon-bin-2.2.1/openseadragon.min.js"></script>
+        <script type="text/javascript">
+            var viewer = OpenSeadragon({
+                id: "openseadragon",
+                prefixUrl: "openseadragon-bin-2.2.1/images/",
+                tileSources: "https://images.cogapp.com/iiif/iiif_postits.tiff/info.json"
+            });
+        </script>
+
+    </div>
+</body>
+</html>
