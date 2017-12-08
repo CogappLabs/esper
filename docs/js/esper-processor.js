@@ -14,7 +14,9 @@ if (!('webkitSpeechRecognition' in window)) {
 
   recognition.onstart = function() {
     recognizing = true;
-    start_img.src = 'mic-animate.gif';
+    if (document.getElementById('start_img') {
+	    start_img.src = 'mic-animate.gif';
+	}
   };
   
   recognition.onresult = function(event) {
@@ -60,6 +62,7 @@ if (!('webkitSpeechRecognition' in window)) {
 			if ( command.indexOf('pull out') >= 0
 			  || command.indexOf('pull back') >= 0
 			  || command.indexOf('Holbeck') >= 0
+			  || command.indexOf('back') >= 0
 			  || command.indexOf('out') >= 0) {	
 				pullOut();
 			} 				
@@ -67,7 +70,15 @@ if (!('webkitSpeechRecognition' in window)) {
 			  || command.indexOf('hold') >= 0
 			  || command.indexOf('wait') >= 0) {
 				esperStop();
-			} 
+			}
+			if ( command.indexOf('hard copy') >= 0
+			  || command.indexOf('print') >= 0
+			  || command.indexOf('printout') >= 0) {
+				hardCopy();
+			}
+			if ( command.indexOf('f***') >= 0) {
+				alert('F*** you too');
+			}
 	//	}
      // }
     }
@@ -77,12 +88,16 @@ if (!('webkitSpeechRecognition' in window)) {
   recognition.onerror = function(event) {
     alert(event.error);
     if (event.error == 'no-speech') {
-      start_img.src = 'mic.gif';
+      if (document.getElementById('start_img') {
+     	 start_img.src = 'mic.gif';
+      }
       alert('info_no_speech');
       ignore_onend = true;
     }
     if (event.error == 'audio-capture') {
-      start_img.src = 'mic.gif';
+      if (document.getElementById('start_img') {
+        start_img.src = 'mic.gif';
+      }
       alert('info_no_microphone');
       ignore_onend = true;
     }
@@ -99,7 +114,9 @@ if (!('webkitSpeechRecognition' in window)) {
   
   recognition.onend = function() {
     recognizing = false;
-    start_img.src = 'mic.gif';
+    if (document.getElementById('start_img') {
+      start_img.src = 'mic.gif';
+    }
   }
 }
 
