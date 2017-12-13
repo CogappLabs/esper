@@ -49,7 +49,9 @@ window.drawGrid = function () {
       ctx.fillText(xy,x,10);    
       xy+=10;  
     }
-  }
+
+	setTimeout("ctx.clearRect(0, 0, myCanvas.width, myCanvas.height)", 1500);
+}
 
 window.showNumbers = function() {
 
@@ -102,9 +104,7 @@ window.renderCrosshairs = function(x, y) {
 	centerY = Math.floor(centerY) + 0.5;
 
 	drawCrosshair(centerX, centerY, 'rgba(85,168,252,0.5)');
-	// setTimeout("viewer.forceRedraw()", 250);
 	setTimeout("drawCrosshair(midX, midY, 'rgba(85,168,252,0.8)')", 500);
-	// setTimeout("viewer.forceRedraw()", 750);
 	setTimeout("drawCrosshair(finalX, finalY, 'rgba(85,168,252,1)')", 1000);
 	setTimeout("ctx.clearRect(0, 0, myCanvas.width, myCanvas.height)", 1500);
 
