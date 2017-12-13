@@ -54,7 +54,7 @@ if (!('webkitSpeechRecognition' in window)) {
 			  || command.indexOf('Holbeck') >= 0
 			  || command.indexOf('back') >= 0
 			  || command.indexOf('out') >= 0) {	
-				//pullOut();
+				pullOut();
 				commandTrigger = true;
 			}
 			else if ( command.indexOf('pan right') >= 0
