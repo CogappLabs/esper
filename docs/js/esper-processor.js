@@ -20,7 +20,6 @@ if (!('webkitSpeechRecognition' in window)) {
   };
   
   recognition.onresult = function(event) {
-  console.log('result');
 	var command;
 	var commandTrigger;
     for (var i = event.resultIndex; i < event.results.length; ++i) {
