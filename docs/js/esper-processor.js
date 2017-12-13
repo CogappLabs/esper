@@ -100,10 +100,6 @@ if (!('webkitSpeechRecognition' in window)) {
 				hardCopy();
 				commandTrigger = true;
 			}
-			else if ( command.indexOf('f***') >= 0) {
-				alert('F*** you too');
-				commandTrigger = true;
-			}
 			
 			if (commandTrigger) {
 				break;  
