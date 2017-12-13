@@ -70,21 +70,21 @@ function enhance() {
 
 function pullOut() {
     
-    // esperStop();
-    // playChuck();
+    esperStop();
+    playChuck();
     
-    // intVal = setInterval(function() {
-    //    // console.log("dezooming " + viewer.viewport.getZoom())
-    //    if(viewer.viewport.getZoom() > 0.79) {
-    //     viewer.viewport.zoomTo(viewer.viewport.getZoom()/1.1,null,true);
-    //     blueFlash();
-    //     drawGrid();
-    //    }
-    //    else {
-    //     esperStop();
-    //    }
+    intVal = setInterval(function() {
+       // console.log("dezooming " + viewer.viewport.getZoom())
+       if(viewer.viewport.getZoom() > 0.79) {
+        viewer.viewport.zoomTo(viewer.viewport.getZoom()/1.1,null,true);
+        blueFlash();
+        drawGrid();
+       }
+       else {
+        esperStop();
+       }
       
-    // }, effectSpeed)
+    }, effectSpeed)
 
 }
 
