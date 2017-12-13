@@ -38,6 +38,7 @@ function startFullScreen(event) {
         drawGrid();
         playBeep();
         playBop();
+        setTimeout("clearOverlay()", 1500);
     } else {
         recognition.stop();
     }
@@ -109,7 +110,7 @@ function esperStop() {
     intVal = null;
     stopAudio();
     drawGrid();
-
+    setTimeout("clearOverlay()", 1500);    
 }
 
 function pan(x,y) {

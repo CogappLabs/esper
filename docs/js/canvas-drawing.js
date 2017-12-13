@@ -49,8 +49,6 @@ window.drawGrid = function () {
       ctx.fillText(xy,x,10);    
       xy+=10;  
     }
-
-	setTimeout("ctx.clearRect(0, 0, myCanvas.width, myCanvas.height)", 1500);
 }
 
 window.showNumbers = function() {
