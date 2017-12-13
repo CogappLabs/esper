@@ -12,7 +12,7 @@ $(function ()
     "use strict";
     $('#fullscreen').click(goFullScreen);
     $('#enhance').click(enhance);
-    $('#pull-out').click(pullOut);
+    //$('#pull-out').click(pullOut);
     $('#pan-right').click(panRight);
     $('#pan-left').click(panLeft);
     $('#pan-up').click(panUp);
@@ -74,7 +74,6 @@ function pullOut() {
     playChuck();
     
     intVal = setInterval(function() {
-       // console.log("dezooming " + viewer.viewport.getZoom())
        if(viewer.viewport.getZoom() > 0.79) {
         viewer.viewport.zoomTo(viewer.viewport.getZoom()/1.1,null,true);
         blueFlash();
