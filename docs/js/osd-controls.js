@@ -130,6 +130,7 @@ function pan(x,y) {
 }
 
 function hardCopy() {
+    viewer.setFullScreen(false);
     esperStop();
     window.print();
 }
