@@ -132,6 +132,6 @@ function pan(x,y) {
 }
 
 function hardCopy() {
-    clearOverlay();
+    esperStop();
     window.print();
 }
