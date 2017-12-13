@@ -27,6 +27,7 @@ window.effectSpeed = 400;
 viewer.addHandler('full-screen', startFullScreen); 
 
 function goFullScreen() {
+    $('#intro').fadeOut();
     viewer.setFullScreen(true);
 }
 

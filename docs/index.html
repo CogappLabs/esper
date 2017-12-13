@@ -5,15 +5,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="openseadragon-bin-2.2.1/openseadragon.min.js"></script>
     <style>
-    
+        
         body {
             background-color: black;
 
         }
+        
         #content {
             font-family:sans-serif;
             max-width: 80%;
             margin: 0 auto;
+        }
+        
+        #intro {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            z-index: 10000;
         }
         
         #openseadragon {
@@ -27,12 +36,11 @@
     </style>
 </head>
 <body>
-
-	<div id="div_start">
-		<marquee style="width:90%;font-family:'Courier New', Courier, monospace, console;line-height:36px;font-size:24px;color:#67ce27;background-color:black;"> Click the microphone to begin listening and use the following voice commands: 
-enhance, pull back, pan right, pan left, pan up, pan down, stop. Press 'f' for fullscreen</marquee>
-          <button id="start_button" onclick="startButton(event)" style="width:8%;display: inline-block;"><img alt="Start" id="start_img" src="mic.gif"></button>
-        </div>
+    <div id="intro" onclick="goFullScreen(event)">
+        <p>Click the microphone to begin listening and use the following voice commands: 
+        enhance, pull back, pan right, pan left, pan up, pan down, stop. Press 'f' for fullscreen
+        </p>
+    </div>
     <div id="content" style="padding-top:20px;">
 
         <div id="openseadragon">
