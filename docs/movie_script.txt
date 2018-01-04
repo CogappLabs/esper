@@ -1,0 +1,35 @@
+SCRIPT FROM ORIGINAL MOVIE
+
+See snippet at https://www.youtube.com/watch?v=5-7iJPwrsw0
+
+C1, C2 = cameras 1 and 2
+
+0:00 [C1: Deckart puts hard-copy into machine. Sits down. Pours drink. Esper initilialises, beeping]
+0:10 [C2: long view of machine]
+0:13 [C1: view of Deckart and machine]
+0:16 [C2: long view of machine]
+0:18 "Enhance 224 to 176" 
+0.35 [C1 view of Deckart and machine]
+0:38 [C2: long view of machine]
+0:39 "Enhance...Stop"
+0:43: [C1 view of Deckart and machine]
+0:48 [Deckart leans forward]
+0:51 [C1 close up of Deckart, hand on chin]
+0:53 "Move in, stop."
+0:55 [C2 close up of screen]
+1:01 "Pull out, track right... stop"
+1:05 [C1 Deckart in profile view]
+1:10 "Center in, pull back. Stop. Track 45 right. Stop. Center and stop."
+1:25 "Enhance 34 to 36."
+1:38 "Pan right and pull back. Stop."
+1:49 "Enhance 34 to 46."
+2:00 [C1 close up eyes-to-mouth]
+2:03 "Pull back.... Wait a minute, go right, stop."
+2:19 "Enhance 57 to 19. Track 45 left. Stop."
+2:20 [C1 close up eyes nose]
+2:23 "Enhance 15 to 23"
+2:30 "Give me a hard copy right there."
+
+
+
+
